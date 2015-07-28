@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1#headline Memory Matrix!
+  .top-performers
+    h3 Top Players
+    .hr
+    .tp-wrapper
+      table.tp
+        thead
+          tr
+            th Name
+            th Level
+            th Correct Click
+        tbody
+  .start-container
+      button#start Play!
+    #score
+      h3 Score
+        button#savescore Save   
+      .hr
+      |   
+      table
+        tr
+          td.levellabel Level
+          td#levelscore.scores 1
+        |     
+        tr
+          td.ccplabel Correct Click
+          td#ccpscore.scores
+  .overlay
+  .modal
+    label Enter Name
+    input(type='text' placeholder='Player Name...' id='username')
+    input(type='submit' value='Okay!' id='submit')
+  canvas#canvas
