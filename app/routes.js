@@ -8,8 +8,8 @@ module.exports = function(app){
 	app.post('/save',function(req,res){
 		var p = new Player({
 			name: req.body.name,
-			level: req.body.level,
-			ccp: req.body.ccp
+			level: parseInt(req.body.level),
+			ccp: parseInt(req.body.ccp)
 		});
 
 		p.save(function(err){
@@ -22,7 +22,7 @@ module.exports = function(app){
 			    ],
 			    function(err,result) {
 			      if(err){
-			      	res.json({success: false, message: err})
+			      	res.json({success: false, message: err});
 			      }else{
 			      	res.json({success: true, message: '', players: result});
 			      }
@@ -39,7 +39,7 @@ module.exports = function(app){
 	    ],
 	    function(err,result) {
 	      if(err){
-	      	res.json({success: false, message: err})
+	      	res.json({success: false, message: err});
 	      }else{
 	      	res.json({success: true, message: '', players: result});
 	      }

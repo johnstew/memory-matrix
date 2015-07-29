@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 var playerSchema = new Schema({
   name: String,
   posted: Date,
-  level: String,
-  ccp: String
+  level: Number,
+  ccp: Number
 });
 
 var Player = mongoose.model('Player', playerSchema);
