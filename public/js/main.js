@@ -1,20 +1,18 @@
-
-window.requestAnimFrame = (function(callback) {
-  return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
-    window.setTimeout(callback, 1000 / 60);
-  };
-})();
-
 var canvas  = document.getElementById('canvas');
 var ctx     = canvas.getContext('2d');
 var CWIDTH  = canvas.width = 500;
 var CHEIGHT = canvas.height = 500;
 var CENTERX = window.innerWidth/2;
 var CENTERY = window.innerHeight/2;
+var mainHeadLine = document.getElementById('headline');
+var startContainer = document.querySelector('.start-container');
+
+
+startContainer.style.top = (mainHeadLine.offsetTop+mainHeadLine.offsetHeight+40)+'px';
 
 // center canvas
 var CLEFT = canvas.style.left = (CENTERX - (CWIDTH/2))+'px';
-var CTOP = canvas.style.top = (CENTERY - (CHEIGHT/2))+'px';
+var CTOP = canvas.style.top = (mainHeadLine.offsetTop+mainHeadLine.offsetHeight+40)+'px';
 var selectedValues = [];
 var level = 1;
 var gridSize = 3;
